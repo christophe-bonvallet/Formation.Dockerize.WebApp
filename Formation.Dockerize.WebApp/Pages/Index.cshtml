@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h5>Écriture dans redis</h5>
+<form method="post">
+    <!-- Input and Submit elements -->
+    <button asp-page="Index" type="submit">Chien +1</button>
+    <input asp-for="Vote" type="hidden" value="Chien" />
+</form>
+<form method="post">
+    <!-- Input and Submit elements -->
+    <button asp-page="Index" type="submit">Chat  +1</button>
+    <input asp-for="Vote" type="hidden" value="Chat" />
+</form>
+<form method="post">
+    <!-- Input and Submit elements -->
+    <button asp-page="Index" type="submit">Reset</button>
+    <input asp-for="Vote" type="hidden" value="Reset" />
+</form>
+
+<h5>Lecture dans redis</h5>
+<div>Chien: @Model.ViewData["Chien"]</div>
+<div>Chat:  @Model.ViewData["Chat"]</div>
